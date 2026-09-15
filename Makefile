@@ -8,8 +8,9 @@ CC=clang
 
 EXE = DS3activate
 SOURCE=ds3activate.c
-LIBS += -framework OpenGL -framework Cocoa -framework IOKit -framework CoreVideo
-CFLAGS = -I/usr/local/include -I/opt/local/include
+LIBS += -framework IOKit -framework CoreFoundation
+CFLAGS = -I/usr/local/include -I/opt/local/include -arch x86_64 -arch arm64
+LDFLAGS += -arch x86_64 -arch arm64
 
 ##---------------------------------------------------------------------
 ## BUILD RULES
@@ -19,7 +20,7 @@ all: $(EXE) package_app
 	@echo Build complete
 	 
 $(EXE): 
-	$(CC) -o  $(EXE) $(SOURCE) $(CXXFLAGS) $(LIBS)
+	$(CC) -o  $(EXE) $(SOURCE) $(CFLAGS) $(LDFLAGS) $(LIBS)
 
 package_app:
 	mkdir -p DS3activate.app/Contents/{MacOS,Resources}
