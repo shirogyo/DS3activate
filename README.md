@@ -1,5 +1,5 @@
 # DS3activate-universal
-App to enable support for DualShock 3 controllers in macOS Monterey and Ventura.
+App to enable support for DualShock 3 controllers in macOS builds from Monterey onwards
 
 This is a fork of the original branch by jozews321 from [https://github.com/jozews321/DS3activate](https://github.com/jozews321/DS3activate)
 
